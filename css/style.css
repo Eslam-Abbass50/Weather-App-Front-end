@@ -1,180 +1,149 @@
-
 body {
-    background-color: black;
+    line-height: 1.9;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
+
+html {
+    scroll-behavior: smooth;
 }
 
-.item {
-    text-align: center;
-    border-radius: 7px;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-}
 
-.overlay {
-    width: 100%;
+
+
+/********* Start Global *********/
+.main-color {color: #37aec3}
+
+input:focus-visible {outline: none;}
+
+.btn {transition: all 0.3s;}
+
+.btn:hover {
+    color: #37aec3;
+    background-color: #fff;
+    border: 1px solid #37aec3;
+}
+/********* End Global *********/
+
+/********* Start Display Temp *********/ 
+
+
+.bg-color
+{
     height: 100%;
-    position: absolute;
-    top: 100%;
-    cursor: pointer;
-    left: 0;
-    background-color: rgba(255, 255, 255, .7);
-    color: #000;
-    transition: all 1s;
+    background-color: rgba(49, 153, 171, 0.575);
 }
 
-.item:hover .overlay {
-    top: 0;
-    transition: all 1s;
+.display-temp{
+
+    background-image: url(../images/france.svg);
+    background-size: cover;
+}
+.display-temp .search {width: 42%;}
+
+.display-temp #search-bar {
+    padding: 5px 15px;
+    border: 1px solid #3199ab;
+    border-radius: 20px;
 }
 
-@media (max-width:576px) {
-    .Description h2 {
-        font-size: 1rem;
-    }
-
-    .Description p {
-        margin-bottom: 0;
-    }
-
-    #searchWord {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
+.display-temp .temp-card {
+    width: 32%;
+    border-radius: 8px;
 }
 
-.form-control {
-    border: none;
-    color: #fff;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 0;
+.display-temp .temp-card:first-of-type {
+    background-color: #3199ab;
+}
+.display-temp .temp-card:first-of-type h2 {
+    font-size: 50px;
+    font-weight: 600;
 }
 
-.form-control:focus {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 0;
-
+.display-temp .temp-card:first-of-type .day-and-date {
+    background-color: #374850;
 }
 
-#line {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+.display-temp .temp-card:nth-of-type(2) {
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
-.alert {
-    display: none;
-}
-
-.outerBox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:3333;
-    width: 50px;
-    height: 100vh;
-    background-color: #f8f6f6;
-    text-align: center;
-}
-
-.imgNav {
-    padding: 25px 0px;
-}
-
-.imgNav img {
-    height: 48px;
-}
-
-.LinksNav {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.LinksNav svg {
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.iconsNav {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.iconsNav svg {
-    font-size: 18px;
-    padding: 20px;
-}
-
-
-.innerbox {
-    position: fixed;
-    top: 0;
-    z-index:3333;
-    background-color: black;
-    width: 240px;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: all 0.5;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.innerbox ul {
-    overflow: hidden;
-    padding: 0;
-    padding-left: 30px;
-}
-
-.innerbox ul li a {
-    color: #f9f6f6;
-    text-decoration: none;
-    font-weight: normal;
-    font-weight: 500;
-}
-
-.innerbox ul li a:hover,
-.innerIcon svg:hover {
-    color: #ff655c;
+.display-temp .temp-card:nth-of-type(2), 
+.display-temp .temp-card:nth-of-type(3) {
+    background-color: #83bbc4;
     transition: all 0.3s;
 }
 
-.innerbox ul li {
-    list-style: none;
-    padding-top: 500px;
+.display-temp .temp-card:nth-of-type(2):hover,
+.display-temp .temp-card:nth-of-type(3):hover {background-color: #3199ab;}
+
+.display-temp .temp-card .day-and-date {
+    background-color: #455a64;
+    color: #bfc1c8;
+    padding: 10px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
-.innerIcon {
-    position: absolute;
-    bottom:60px;
-    left: 50px;
-    padding: 0px;
-    color: #f9f6f6;
+.display-temp .temp-card .day-and-date p {margin: 0 !important;}
+
+.display-temp .temp-card #location {
+    font-size: 22px;
+    text-shadow: 0 0 1px #fff,  0 0 1px #fff
 }
 
-.innerIcon svg {
-    
+.display-temp .temp-card .temp-datails {
+    padding: 25px;
+    color: #fff;
+}
+
+.display-temp .temp-card .temp-datails #today-description,
+.display-temp .temp-card .temp-datails .nextDay-description {
     font-size: 14px;
-    padding-left: 10px;
-    padding-bottom: 20px;
-    cursor: pointer;
+    color: #455a64;
+    text-shadow: 0 0 1px #455a64,  0 0 1px #455a64;
+}
+/* Small to Medium Screen */
+@media (max-width: 991px) 
+{
+ 
+
+    /* Display Temp */
+    .display-temp .city-temp {display: block !important;}
+
+    .display-temp #search-bar {margin-bottom: 10px !important;}
+
+    .display-temp .search,
+    .display-temp .temp-card {
+        width: 100%;
+        margin: 20px 0 !important;
+    }
+
+    
+}
+/********* End Display Temp *********/ 
+
+
+
+
+/********* Start Footer *********/ 
+footer {
+    background-color: #374850;
+    padding: 10px 0;
 }
 
-.innerbox .paragraph {
-    bottom: 10px;
-    left: 10px;
+footer i {
+    margin-right: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
+
+footer i:hover {color: #37aec3;}
+/********* End Footer *********/ 
+
 
 
